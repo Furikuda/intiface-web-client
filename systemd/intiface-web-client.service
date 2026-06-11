@@ -1,0 +1,25 @@
+[Unit]
+Description=Intiface Web Client
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/intiface-web-client/webclient
+
+# Environment variables passed to the process
+Environment=WEB_PORT=8001
+
+# Path to the python binary inside your local virtualenv, follontwed by your script
+ExecStart=/var/www/intiface-web-client/.venv/bin/python webclient/webclient.py
+
+# Restart configuration if the server crashes
+Restart=always
+RestartSec=5
+
+# Standard output and error routing
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
