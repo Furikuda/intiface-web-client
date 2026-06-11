@@ -4,23 +4,21 @@ This simple, entirely vibecoded Python server acts as a **client** for [Intiface
 
 It acts as a browser "bridge", so a second person can drive the toys.
 
-![](doc/schema.png)
-
-
-Two listeners:
-
-- **`:8765` WebSocket** — the app dials in here. We act as the Buttplug *client*.
-- **`:80` HTTP** (plain, no TLS) — a browser enters a name + session ID and gets a
-  control page.
+<img src="/doc/schema.png">
 
 ## How it works
 
 1. You need a version of the Intiface Central app that implements the "Client Mode". Check out [my branch](https://github.com/Furikuda/intiface-central/tree/client-mode).
-2. On the app, you setup your Bluetooth device ![](doc/sc1.jpg)
-3. Once it's done, you provide the URL of where your Intiface Web Client instance runs (I know it's confusing that this server is a client) ![](doc/sc2.jpg)
-3. If everything works, the App will generate a **session ID** (a 4-word passphrase), shows it, and lets you copy paste it for easy sharing. ![](doc/sc3.jpg)
-3. When someone opens the link you've just copied (or just goes to the base URL you've set up earlier), say `https://example.com/intiface/`, they need to specify **their name + the session ID**. ![](doc/sc4.jpg)
-4. And if everything goes well, they can now see sliders and remotely control your toys ![](doc/sc5.jpg) 
+2. On the app, you setup your Bluetooth device
+<img src="/doc/sc1.jpg" width="20%" height="20%">
+4. Once it's done, you provide the URL of where your Intiface Web Client instance runs (I know it's confusing that this server is a client)
+<img src="/doc/sc2.jpg" width="20%" height="20%">
+3. If everything works, the App will generate a **session ID** (a 4-word passphrase), shows it, and lets you copy paste it for easy sharing:
+<img src="/doc/sc3.jpg" width="20%" height="20%">
+3. When someone opens the link you've just copied (or just goes to the base URL you've set up earlier), say `https://example.com/intiface/`, they need to specify **their name + the session ID**.
+<img src="/doc/sc4.jpg" width="20%" height="20%">
+4. And if everything goes well, they can now see sliders and remotely control your toys
+<img src="/doc/sc5.jpg" width="20%" height="20%">
 5. lol
 
 ### Known limitations (by design)
